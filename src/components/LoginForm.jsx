@@ -11,7 +11,7 @@ function LoginForm({ onLogin }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const endpoint = isSignup ? 'http://localhost:5000/auth/signup' : 'http://localhost:5000/auth/login';
+    const endpoint = isSignup ? 'https://audioaura-backend.onrender.com/auth/signup' : 'https://audioaura-backend.onrender.com/auth/login';
     const data = isSignup ? { username, email, password } : { email, password };
 
     try {
