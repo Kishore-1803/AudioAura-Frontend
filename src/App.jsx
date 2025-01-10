@@ -14,7 +14,7 @@ function App() {
 
   const generatePodcast = async (data) => {
     try {
-      const response = await axios.post('http://localhost:5000/generate', data);
+      const response = await axios.post('https://audioaura-backend.onrender.com/generate', data);
       setAudioUrl(response.data.audioUrl);
       setTranscript(response.data.transcript);
     } catch (error) {
