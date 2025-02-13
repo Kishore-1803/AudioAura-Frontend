@@ -2,7 +2,7 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background-image: url('./Icons/bg.jpg');
+    background-color: black;
     background-size: cover; /* Ensures the image covers the whole area */
     background-position: center; /* Centers the image */
     background-repeat: no-repeat;
@@ -66,15 +66,54 @@ body {
   }
   
   .homepage-content h2 {
-    margin-top: -200px;
+    margin-top: 50px;
     font-size: 2.5rem;
-    color: brown;
+    color: white;
   }
   
   .homepage-content p {
     font-size: 1.2rem;
     margin: 20px 0;
     color: brown;
+  }
+
+  .features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .feature-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .feature-icon {
+    width: 40px; /* Adjust the size as needed */
+    height: 40px; /* Adjust the size as needed */
+    margin-bottom: 10px; /* Space between icon and text */
+  }
+  
+  .feature-card h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+
+  .features h3 {
+    margin-top: 20px;
+    font-size: 2rem;
+    color: white;
+  }
+  
+  .feature-card p {
+    font-size: 14px;
+    color: #555;
   }
   
   /* Footer */

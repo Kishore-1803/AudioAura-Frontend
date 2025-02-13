@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import logo from '../Icons/1w.png'; // Update the path to your logo
 import '../PodcastForm.css';
 
 function PodcastForm({ onGenerate, audioUrl, transcript }) {
   const [city, setCity] = useState('');
-  const username = localStorage.getItem('username') || 'Guest'; // Retrieve the username from localStorage or default to 'Guest'
+  const username = localStorage.getItem('username') || 'Guest';
   const [showTranscript, setShowTranscript] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
+
+  const audioRef = useRef(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,19 +21,45 @@ function PodcastForm({ onGenerate, audioUrl, transcript }) {
     setShowTranscript(!showTranscript);
   };
 
+  const togglePlayback = () => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
+  const handleTimeUpdate = () => {
+    if (audioRef.current) {
+      setCurrentTime(audioRef.current.currentTime);
+    }
+  };
+
+  const handleLoadedMetadata = () => {
+    if (audioRef.current) {
+      setDuration(audioRef.current.duration);
+    }
+  };
+
+  const formatTime = (time) => {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  };
+
   return (
     <div className="podcast-form-container">
-      {/* Company Logo at the top-left */}
       <div className="logo-container">
         <img src={logo} alt="Company Logo" className="company-logo" />
       </div>
 
-      {/* Greeting at the top-right */}
       <div className="greeting">
         Hello, {username}!
       </div>
 
-      {/* Form Content */}
       <form onSubmit={handleSubmit} className="podcast-form">
         <label className="input-label">
           Enter City:
@@ -45,11 +76,31 @@ function PodcastForm({ onGenerate, audioUrl, transcript }) {
         </button>
       </form>
 
-      {/* Audio Player Section */}
       {audioUrl && (
         <div className="audio-player-wrapper">
           <div className="audio-player-container">
-            <audio className="audio-player" controls src={audioUrl}></audio>
+            <audio
+              ref={audioRef}
+              src={audioUrl}
+              onTimeUpdate={handleTimeUpdate}
+              onLoadedMetadata={handleLoadedMetadata}
+            />
+            <div className="custom-audio-player">
+              <button className="play-button" onClick={togglePlayback}>
+                {isPlaying ? '⏸' : '▶'}
+              </button>
+              <div className="progress-bar-container">
+                <div
+                  className="progress-bar"
+                  style={{
+                    width: `${(currentTime / duration) * 100}%`,
+                  }}
+                ></div>
+              </div>
+              <span className="time-display">
+                {formatTime(currentTime)} / {formatTime(duration)}
+              </span>
+            </div>
             <a
               className="download-link"
               href={audioUrl}

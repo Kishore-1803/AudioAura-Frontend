@@ -4,17 +4,17 @@
   color: #fff;
   background: linear-gradient(135deg, #000, #222);
   height: 1000px;
-  width:100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center all items horizontally */
-  justify-content: flex-start; /* Ensure items start from the top */
-  padding: 20px; /* Add padding to avoid content touching edges */
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
 }
 
 /* Form Container */
 .podcast-form {
-  background: rgba(255, 255, 255, 0.1); 
+  background: rgba(255, 255, 255, 0.1);
   width: 400px;
   margin: 0 auto;
   margin-top: 100px;
@@ -91,20 +91,64 @@
 .audio-player-container {
   margin-top: 20px;
   padding: 15px;
-  background: rgba(255, 255, 255, 0.1); 
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
   text-align: center;
   width: 90%;
-  height: 100px;
 }
 
-.audio-player {
-  width: 100%;
+.custom-audio-player {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #333;
+  border-radius: 8px;
+  padding: 10px 15px;
+}
+
+.play-button {
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  color: #000;
   border: none;
-  outline: none;
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
+.play-button:hover {
+  background: #444;
+  color: #fff;
+}
+
+.progress-bar-container {
+  flex-grow: 1;
+  height: 8px;
+  background: #555;
+  margin: 0 10px;
+  border-radius: 4px;
+  position: relative;
+}
+
+.progress-bar {
+  width: 0%;
+  height: 100%;
+  background: #fff;
+  border-radius: 4px;
+}
+
+.time-display {
+  font-size: 14px;
+  color: #fff;
+  width: 100px;
+  text-align: right;
+}
+
+/* Download Link */
 .download-link {
   display: inline-block;
   margin-top: 10px;
@@ -144,7 +188,7 @@
 /* Transcript Box */
 .transcript-box {
   width: 97.5%;
-  height:fit-content;
+  height: fit-content;
   margin-top: 15px;
   padding: 15px;
   background: rgba(255, 255, 255, 0.1);
