@@ -6,9 +6,7 @@ AudioAura is an AI-powered podcast generator that creates personalized podcast e
 
 - 📰 **AI-Generated Podcasts** – Automatically generates podcast episodes using real-time news and weather data.  
 - 🌦 **Context-Aware Content** – Fetches the latest news and weather updates to create relevant audio content.  
-- 🔊 **Text-to-Speech Conversion** – Converts generated scripts into high-quality speech using **gTTS (Google Text-to-Speech)**.  
-- 🎙 **Customizable Voice & Language** – Supports multiple voice styles and languages.  
-- 📡 **Live & Scheduled Podcast Generation** – Generate episodes on demand or set up automated scheduling.  
+- 🔊 **Text-to-Speech Conversion** – Converts generated scripts into high-quality speech using **gTTS (Google Text-to-Speech)**.   
 - 🔗 **Seamless API Integration** – Fetches dynamic content from **NewsAPI.ai** and **Weatherbit API**.  
 - 🎧 **Audio Playback & Download** – Users can stream or download episodes for offline listening.  
 
@@ -16,8 +14,13 @@ AudioAura is an AI-powered podcast generator that creates personalized podcast e
 
 - **Frontend:** React.js  
 - **Backend:** Node.js, Express.js  
-- **APIs:** NewsAPI.ai, Weatherbit API  
+- **APIs:** NewsAPI.ai, WeatherStack API  
 - **Text-to-Speech:** gTTS (Google Text-to-Speech)  
-- **Storage:** Firebase / Local File System  
 
----
+## 🔮 Future Updates  
+
+- 🤖 **Advanced AI Narration** – Integration with more advanced TTS engines like ElevenLabs or AWS Polly.
+- 🎵 **Background Music Support** – Option to add background music or sound effects.
+- 📲 **Mobile App Version** – Develop a React Native version for iOS and Android.
+- 📢 **Podcast Hosting & Distribution** – Direct publishing to Spotify, Apple Podcasts, etc.
+- 🌐 **Multilingual Support** – Expand language options for diverse user needs.
