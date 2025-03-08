@@ -1,6 +1,6 @@
 # AudioAura
 
-AudioAura is an AI-powered podcast generator that creates personalized podcast episodes using real-time news and weather data from external APIs like NewsAPI.ai and Weatherbit. It dynamically generates scripts, converts them to speech, and provides seamless playback and download options.
+AudioAura is an AI-powered podcast generator.
 
 ## 🚀 Features  
 
