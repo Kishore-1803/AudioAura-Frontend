@@ -5,15 +5,6 @@
 </p>
 
 <p align="center">
-  <a href="https://audio-aura-dun.vercel.app"><strong>Live Demo</strong></a> •  
-  <a href="https://github.com/Kishore-1803/AudioAura-Frontend/stargazers">Star this repo ⭐</a>
-</p>
-
-<p align="center">
-  <img src="public/Screenshot 2025-01-11 190103.png" alt="AudioAura Screenshot" width="600"/>
-</p>
-
-<p align="center">
   <img src="https://img.shields.io/badge/React-Frontend-blue.svg"/>
   <img src="https://img.shields.io/badge/Vercel-Deployment-purple.svg"/>
   <img src="https://img.shields.io/badge/Status-Active-success.svg"/>
